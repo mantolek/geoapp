@@ -1,0 +1,23 @@
+.searchHistory__container {
+  border-bottom: 1px solid #000;
+
+  .searchHistory__wrapper {
+    padding: 1rem;
+
+    ul {
+      list-style: none;
+      margin: 1rem 0;
+      padding: 0;
+
+      li {
+        color: green;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .searchHistory__container {
+    border-right: 1px solid #000;
+  }
+}

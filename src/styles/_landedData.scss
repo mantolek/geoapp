@@ -1,0 +1,32 @@
+.landedData__container {
+  display: flex;
+  flex-direction: column;
+
+  .landedLocationMap__container {
+    justify-content: center;
+    display: flex;
+    flex: 1;
+  }
+  .landedLocationData__container {
+    flex: 1;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .landedData__container {
+    flex-direction: row;
+
+    .landedLocationMap__container {
+      margin-right: 1rem;
+      display: block;
+      flex: 0;
+    }
+
+    .landedLocationData__container {
+      margin: 0;
+      padding-left: 1rem;
+      border-left: 1px solid #000;
+    }
+  }
+}
