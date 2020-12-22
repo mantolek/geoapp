@@ -22,7 +22,7 @@ const SearchedData: React.FC<SearchDataProps> = ({ landedUserIP, setHistory }) =
     if (!checkInput(searchUserIp, landedUserIP, setError)) return;
 
     fetch(
-      `http://api.ipstack.com/${searchUserIp}?access_key=f474c7cec0d2937b16d292418ba38a2a`
+      `https://api.ipstack.com/${searchUserIp}?access_key=f474c7cec0d2937b16d292418ba38a2a`
     )
       .then((data) => data.json())
       .then((result) => {
