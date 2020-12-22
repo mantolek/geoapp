@@ -10,7 +10,7 @@ const LandedData: React.FC<{ landedUserIP: string }> = ({ landedUserIP }) => {
 
   const getLandedUserData = useCallback(() => {
     fetch(
-      `https://api.ipstack.com/${landedUserIP}?access_key=d17fbeab4644f1d7d3a5e0a8b72f677a`
+      `https://cors-anywhere.herokuapp.com/api.ipstack.com/${landedUserIP}?access_key=d17fbeab4644f1d7d3a5e0a8b72f677a`
     )
       .then((data) => data.json())
       .then((result) => {
