@@ -1,0 +1,22 @@
+.displayMap__container {
+  justify-content: center;
+  display: flex;
+  flex: 1;
+
+  .displayMap__default {
+    height: 250px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+}
+}
+
+@media only screen and (min-width: 768px) {
+  .displayMap__container {
+    margin-right: 1rem;
+    display: block;
+    flex: 0;
+  }
+}

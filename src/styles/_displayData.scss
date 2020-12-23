@@ -1,0 +1,12 @@
+.displayData__container {
+  flex: 1;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .displayData__container {
+    margin: 0;
+    padding-left: 1rem;
+    border-left: 1px solid #000;
+  }
+}

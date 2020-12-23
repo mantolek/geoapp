@@ -1,41 +1,31 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { checkInput } from '../../utils/validation';
 import PopupBox from '../Shared/Popup';
-import SearchedLocationMap from './elements/SearchedLocationMap';
-import SearchLocationData from './elements/SearchLocationData';
-import Form from './elements/Form';
-import { SearchDataProps} from '../../types/index'
+import DisplayMap from '../Shared/DisplayMap';
+import DisplayData from '../Shared/DisplayData';
+import Form from './Form';
+import { SearchDataProps } from '../../types/index';
+import { useGetdata } from '../../utils/useGetdata';
 
-const SearchedData: React.FC<SearchDataProps> = ({ landedUserIP, setHistory }) => {
+const SearchedData: React.FC<SearchDataProps> = ({
+  landedUserIP,
+  setHistory,
+}) => {
   const [error, setError] = useState('');
-
   const [searchUserIp, setSearchUserIp] = useState('');
-  const [searchUserLocation, setSearchUserLocation] = useState({
-    lat: '',
-    lng: '',
-    ip: ''
-  });
+  const [getData, data] = useGetdata(landedUserIP, false);
 
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!checkInput(searchUserIp, landedUserIP, setError)) return;
 
-    fetch(
-      `https://cors-anywhere.herokuapp.com/api.ipstack.com/${searchUserIp}?access_key=f474c7cec0d2937b16d292418ba38a2a`
-    )
-      .then((data) => data.json())
-      .then((result) => {
-        setSearchUserLocation({
-          lat: result.latitude,
-          lng: result.longitude,
-          ip: result.ip
-        });
-
+    getData()
+      .then(() => {
         setHistory((oldArr: string[]) => [...oldArr, searchUserIp]);
         setSearchUserIp('');
       })
-      .catch((err) => console.log('Error search data'));
+      .catch(() => console.log('Error search data'));
   };
 
   return (
@@ -51,8 +41,8 @@ const SearchedData: React.FC<SearchDataProps> = ({ landedUserIP, setHistory }) =
         setSearchUserIp={setSearchUserIp}
       />
       <div className='searchedData__wrapper'>
-        <SearchedLocationMap location={searchUserLocation} />
-        <SearchLocationData location={searchUserLocation} />
+        <DisplayMap location={data} />
+        <DisplayData location={data} />
       </div>
     </div>
   );

@@ -1,7 +1,8 @@
 export interface LocationProps {
   ip?: string;
+  top?: boolean;
   location: {
-    ip?: string;
+    ip: string;
     lat: string;
     lng: string;
   };

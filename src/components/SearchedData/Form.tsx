@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormProps } from '../../../types/index'
+import { FormProps } from '../../types/index'
 
 const Form: React.FC<FormProps> = ({ submit, setSearchUserIp, searchUserIp }) => {
   return (
