@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { corsURL, access_key } from '../constants/index'
 
 export const useGetdata = (ip: string, initial: boolean) => {
   const [data, setData] = useState({
@@ -9,7 +10,7 @@ export const useGetdata = (ip: string, initial: boolean) => {
 
   const getData = useCallback(async () => {
     fetch(
-      `https://cors-anywhere.herokuapp.com/api.ipstack.com/${ip}?access_key=f474c7cec0d2937b16d292418ba38a2a`
+      `${corsURL}api.ipstack.com/${ip}?access_key=${access_key}`
     )
       .then((data) => data.json())
       .then((result) => {

@@ -1,4 +1,4 @@
-export interface LocationProps {
+export interface ILocationProps {
   ip?: string;
   top?: boolean;
   location: {
@@ -8,29 +8,29 @@ export interface LocationProps {
   };
 }
 
-export interface FormProps {
+export interface IFormProps {
   submit: Function;
   setSearchUserIp: Function;
   searchUserIp: string;
 }
 
-export interface SearchDataProps {
+export interface ISearchDataProps {
   setHistory: Function;
   landedUserIP: string;
 }
 
-export interface PopupProps {
+export interface IPopupProps {
   open: boolean;
   close: Function;
   errorMsg: string;
 }
 
-export interface MapProps {
+export interface IMapProps {
   lat: string;
   lng: string;
 }
 
-export interface HistoryProps {
+export interface IHistoryProps {
   lat: string;
   lng: string;
 }

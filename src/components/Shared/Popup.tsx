@@ -1,9 +1,9 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { PopupProps } from '../../types/index'
+import { IPopupProps } from '../../types/index'
 
-const PopupBox: React.FC<PopupProps> = ({ open, close, errorMsg }) => (
+const PopupBox: React.FC<IPopupProps> = ({ open, close, errorMsg }) => (
   <Popup open={open} closeOnDocumentClick onClose={() => close('')}>
     {(close: any) => (
       <div className='modal'>

@@ -4,10 +4,10 @@ import PopupBox from '../Shared/Popup';
 import DisplayMap from '../Shared/DisplayMap';
 import DisplayData from '../Shared/DisplayData';
 import Form from './Form';
-import { SearchDataProps } from '../../types/index';
+import { ISearchDataProps } from '../../types/index';
 import { useGetdata } from '../../utils/useGetdata';
 
-const SearchedData: React.FC<SearchDataProps> = ({
+const SearchedData: React.FC<ISearchDataProps> = ({
   landedUserIP,
   setHistory,
 }) => {

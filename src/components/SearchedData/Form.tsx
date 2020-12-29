@@ -1,7 +1,7 @@
 import React from 'react';
-import { FormProps } from '../../types/index'
+import { IFormProps } from '../../types/index'
 
-const Form: React.FC<FormProps> = ({ submit, setSearchUserIp, searchUserIp }) => {
+const Form: React.FC<IFormProps> = ({ submit, setSearchUserIp, searchUserIp }) => {
   return (
     <div className='form__container'>
       <form onSubmit={(e) => submit(e)} className='form__wrapper'>

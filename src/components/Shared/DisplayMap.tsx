@@ -1,8 +1,8 @@
 import React from 'react';
 import Map from '../Shared/Map';
-import { LocationProps } from '../../types/index';
+import { ILocationProps } from '../../types/index';
 
-const DisplayMap: React.FC<LocationProps> = ({ location, top }) => {
+const DisplayMap: React.FC<ILocationProps> = ({ location, top }) => {
   if (top === true) {
     return (
       <div className='displayMap__container'>

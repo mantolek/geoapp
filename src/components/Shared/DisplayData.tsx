@@ -1,7 +1,7 @@
 import React from 'react';
-import { LocationProps } from '../../types/index'
+import { ILocationProps } from '../../types/index'
 
-const DisplayData: React.FC<LocationProps> = ({ location }) => {
+const DisplayData: React.FC<ILocationProps> = ({ location }) => {
   return (
     <div className='displayData__container'>
       <h3>Latest search:</h3>
